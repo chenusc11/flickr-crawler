@@ -23,6 +23,8 @@ def get_urls_for_tags(tags, number):
     urls = []
     for photo in photos:
         try:
+            # size : size of photo Thumbnail, Small,
+            #               Medium, Large, Original
             urls.append(photo.getURL(size='Original', urlType='source'))
         except:
             continue
