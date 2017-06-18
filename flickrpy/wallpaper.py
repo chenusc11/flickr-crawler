@@ -11,10 +11,11 @@ Requires:
  - Python Imaging Library [http://www.pythonware.com/products/pil/]
 """
 
-__author__ = "James Clarke <james@jamesclarke.info>"
-__version__ = "$Rev: 2 $"
-__date__ = "$Date: 2007-03-22 19:28:46 +0000 (Thu, 22 Mar 2007) $"
-__copyright__ = "Copyright 2004-5 James Clarke"
+__author__ = "Shuai Chen <shuaic92@gmail.com>, James Clarke <james@jamesclarke.info>"
+__version__ = "$Rev: 3 $"
+__date__ = "$Date: 2017-06-18 10:00:00 +0000 (Sun, 18 Jun 2017) $"
+__copyright__ = "Copyright 2004-5 James Clarke, Portions: 2017 Shuai Chen"
+
 
 import sys
 import urllib
@@ -78,21 +79,21 @@ def main(*argv):
     from getopt import getopt, GetoptError
 
     try:
-        (opts, args) = getopt(argv[1:], 'w:h:f', ['width', 'height', 'file'])
+        (opts, args) = getopt(argv[1:], 'w:h:f:', ['width', 'height', 'file'])
     except GetoptError, e:
         print e
         print __doc__
         return 1
 
-    width = 1024
-    height = 768
+    width = 100
+    height = 100
     file = 'wallpaper.jpg'
     
     for o, a in opts:
         if o in ('-w', '--width'):
-            width = a
+            width = int(a)
         elif o in ('-h', '--height'):
-            height = a
+            height = int(a)
         elif o in ('-f' '--file'):
             file = a
         else:
