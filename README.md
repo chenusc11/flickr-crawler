@@ -21,5 +21,3 @@ Requirements
 ============
 
 * PIL
-
-[![Build Status](https://github.com/chenusc11/flickr-crawler.svg)](https://github.com/chenusc11/flickr-crawler)
